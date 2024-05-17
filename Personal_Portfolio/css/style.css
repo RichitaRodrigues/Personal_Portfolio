@@ -1,0 +1,872 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* css custom variables begins */
+
+body.dark{
+    --bg-color1: #0b0f19;
+    --bg-color2: #1c1e2a;
+    --color1: #fff;
+    --color2: #ddd;
+}
+
+body:not(.dark){
+    --bg-color1: #fbfdff;
+    --bg-color2: #f5f5f5;
+    --color1: #3e4455;
+    --color2: #000;
+}
+
+/* css custom variables ends */
+
+
+
+/* universal css properties begins */
+
+body{
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+*,
+::after,
+::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    outline: none;
+}
+
+img{
+    width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+li{
+    list-style: none;
+}
+
+p{
+    color: var(--color1);
+}
+
+p strong{
+    font-weight: 500;
+    color: var(--color2);
+}
+
+h6{
+    font-size: 1rem;
+}
+
+h4{
+    font-size: 1.25rem;
+    color: var(--color1);
+    font-weight: 600;
+}
+
+h2{
+    font-size: 2.5rem;
+    color: var(--bg-color1);
+    font-weight: 600;
+    text-align: center;
+}
+
+h1{
+    font-size: 3rem;
+    color: var(--color1);
+    font-weight: 600;
+}
+
+/* universal css properties begins */
+
+
+
+/* Navbar Design Begins */
+
+header{
+    left: 0;
+    right: 0;
+    z-index: 20;
+    transition: .8s;
+    padding: 15px;
+    position: fixed;
+    background-color: var(--bg-color1);
+    
+}
+
+header .portfolio-row.header-wrap{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-name a{
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--color1);
+}
+
+/* Navbar Design Ends */
+
+
+
+/* Wrapper begins */
+
+.portfolio-container{
+    max-width: 1070px;
+    margin: 0 auto;
+    padding: 0 15px;
+    
+}
+
+.portfolio-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Wrapper ends */
+
+
+
+/* Responsive Navbar Begins */
+
+.portfolio-navbar ul li{
+    display: block;
+}
+
+.portfolio-navbar ul li a {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 45px;
+}
+
+.portfolio-navbar.show{
+    display: block;
+    position: absolute;
+    background-color: rgb(236,241,256);
+    width: 100%;
+    left: 0;
+    top: 60px;
+    padding: 15px;
+    border-top: 5px solid #000;
+    text-align: center;
+}
+
+button{
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover{
+    background-color: rgba(0,136,169,0.8);
+}
+
+.portfolio-navbar ul li a button {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 0.9rem;
+    line-height: 15px;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+
+/* Responsive Navbar Ends */
+
+
+
+.navbar-toggle i{
+    cursor: pointer;
+    line-height: 30px;
+    color: var(--color1);
+    font-size: 1.25rem;
+
+}
+
+.portfolio-navbar {
+    display: none;
+    
+}
+
+/* about design begins */
+
+#aboutme{
+    padding-top: 100px;
+    background-color: var(--bg-color1);
+}
+
+.about-me{
+    align-items: center;
+}
+
+.about-intro{
+    margin: 3rem 0;
+    width: 100%;
+    order: 2;
+    text-align: center;
+}
+
+.about-text h3{
+    color: var(--color1);
+    margin-bottom: 10px;
+}
+
+.about-image{
+    width: 100%;
+    order: 1;
+    position: relative;
+    z-index: 2;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.about-image:hover{
+    transform: translateY(-10.5px);
+}
+
+.about-image img{
+    border-radius: 100% 73% 100% 72% / 99% 86% 75% 63%;
+}
+
+.about-image:hover::before{
+    filter: drop-shadow(0 0 30px rgba(130, 237, 255, 0.97));
+}
+
+.about-image::before{
+    background-image: linear-gradient(11deg, #6ec1e4 0%, #54595f 100%);
+    width: 100%;
+    content: '';
+    height: 100%;
+    z-index: -1;
+    transition: all .5s ease-in-out;
+    position: absolute;
+    box-shadow: 2px 10px 0px 0px rgba(216, 19, 19, 0.16);
+    border-radius: 100% 73% 100% 72% / 99% 86% 75% 63%;
+}
+
+h1 strong,
+h2 strong {
+    background-image: linear-gradient(to right, #977ec7 0%, #f987d6 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* about design ends */
+
+
+
+/* footer begins */
+
+footer{
+    position: relative;
+    width: 100%;
+    background-color: #ece3ef;
+    min-height: 100px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .social_icon,
+footer .menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+footer .social_icon li,
+footer .menu li{
+    list-style: none;
+}
+
+footer .social_icon li a{
+    font-size: 2em;
+    color: #090909;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+footer .menu li a{
+    font-size: 1.2em;
+    color: #090909;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+footer p{
+    color: #558eb7;
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+footer .menu li a:hover{
+    opacity: 1;
+}
+
+footer .social_icon li a:hover{
+    transform: translateY(-10px);
+}
+
+footer .wave{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #f00 url(image/wave.png);
+}
+
+/* footer ends */
+
+
+
+/* skills css begins */
+
+.resume-tab.active .progress-bar{
+    animation: progress 1500ms ease-in 1;
+}
+
+.bar-title,
+.bar-progress{
+    display: flex;
+    background-color: #e9eeef;
+    border-radius: 5px;
+    height: 8px;
+}
+
+.progress-bar{
+    transition-delay: 0s;
+    transition-delay: 1.5s;
+    background-color: #75a9d6;
+    width: 0;
+    position: relative;
+    display: flex;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    
+}
+
+.bar-heading{
+    justify-content: space-between;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bar-content{
+    margin-bottom: 15px;
+}
+
+@keyframes progress {
+    from{
+        width: 0;
+    }
+}
+
+
+/* skills css ends */
+
+
+
+/* resume css begins */
+
+#resume{
+    padding: 60px 0;
+    background-color: var(--bg-color2);
+}
+
+.resume-intro{
+    width: 100%;
+}
+
+.resume-text{
+    margin-top: 18px;
+}
+
+.hello-btn a{
+    margin: 20px 0;
+    color: #fff;
+    background-color: #6366f1;
+    padding: 15px 45px;
+    transition: all 0.3s ease-out 0s;
+    display: inline-block;
+    line-height: 30px;
+}
+
+.hello-btn a:hover{
+    background-color: #293b5f;
+}
+
+.resume-heading{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    position: relative;
+    line-height: 40px;
+    border-radius: 5px;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 1.1rem;
+    transition: .4s;
+    margin-top: 1rem;
+    padding: 0 10px;
+    border: 0;
+    cursor: pointer;
+    color: #000;
+    background-color: #d5d5d5;
+}
+
+.btn:not(:last-child){
+    margin-right: 15px;
+}
+
+.btn:hover,
+.btn.active{
+    background-color: #4d63dd;
+    color: #fff;
+}
+
+.resume-body{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.resume-tab{
+    display: none;
+}
+
+.resume-tab.active{
+    display: block;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.institution,.organization{
+    font-weight: 400;
+    color: #78add9;
+}
+
+.years{
+    color: var(--color1);
+}
+
+.qualification-content{
+    position: relative;
+    padding: 1rem 2.1rem;
+}
+
+.qualification-content::after{
+    position: absolute;
+    content: "";
+    height: 7px;
+    width: 7px;
+    left: 8px;
+    top: 25px;
+    transform: rotate(45deg);
+    background: #e15747;
+}
+
+.qualification-content::before{
+    height: 70%;
+    position: absolute;
+    background: #e8e8e8;
+    left: 10px;
+    width: 3px;
+    content: "";
+}
+
+/* resume css ends */
+
+
+
+/* services css begins */
+
+#services{
+    padding: 60px 0;
+    background-color: var(--bg-color1);
+}
+
+.service-card{
+    transition: .4s;
+    background: var(--bg-color2);
+    text-align: center;
+    padding: 40px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.service-card:hover .icon,
+.service-card:hover h6,
+.service-card:hover p {
+    color: #fff;
+}
+
+.service-card:hover{
+    background-color: #818ae7;
+    transform: translate(-10.5px);
+
+}
+
+.service-card .icon{
+    font-size: 2.5rem;
+    transition: .4s;
+    color: var(--color1);
+}
+
+.service-content p{
+    color: var(--color1);
+    transition: .4s;
+
+}
+
+.service-content h6{
+    transition: .4s;
+    margin: 1rem 0;
+    color: var(--color1);
+}
+
+.service-row{
+    margin-top: 2rem;
+    gap: 2rem;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+}
+
+/* services css ends */
+
+
+
+/* contact css begins */
+
+.error-msg{
+    line-height: 3;
+    color: red;
+}
+
+.success-msg{
+    line-height: 3;
+    color: green;
+}
+
+.form-message.show{
+    display: block;
+}
+
+.form-message{
+    background-color: #3d4145;
+    display: none;
+    margin-top: 10px;
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+#contact{
+    background-color: var(--bg-color2);
+    padding: 60px 0;
+}
+
+.contact-card{
+    text-align: center;
+}
+
+.contact-card .icon i{
+    font-size: 2.5rem;
+    color: var(--color1);
+}
+
+.contact-content{
+    margin-top: 20px;
+
+}
+
+.contact-content h5{
+    font-size: 1rem;
+    color: var(--color1);
+    font-weight: 500;
+}
+
+.contact-content span{
+    color: var(--color1);
+}
+
+.contact-general{
+    display: grid;
+    margin-bottom: 3rem;
+    gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+#contact-form{
+    margin: 2rem auto;
+}
+
+.input-subject,
+.form-submit{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.input-control,
+.contact-msg{
+    background-color: #f6f6f9;
+    color: #3e4455;
+    width: 100%;
+    padding: 0 30px;
+    font-family: 'Roboto Slab', sans-serif;
+    outline: 0;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1.5px solid #f6f6f9;
+    line-height: 56px;
+    height: 50px;
+    font-weight: 500;
+}
+
+.loader i{
+    color: var(--color2);
+    animation: rotateme .4s linear infinite;
+}
+
+.loader-show{
+    display: block;
+}
+
+.loader{
+    width: 100%;
+    text-align: center;
+    display: none;
+    margin-top: 10px;
+    font-weight: 600;
+    background-color: #3d4145;
+    padding: 10px;
+}
+
+.contact-msg{
+    resize: none;
+    padding: 20px 30px;
+    line-height: 1.2;
+    height: 150px;
+}
+
+.btn-submit{
+    width: 100%;
+    background-color: #ff5252;
+    font-family: 'Roboto Slab', sans-serif;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 15px 30px;
+    text-transform: uppercase;
+}
+
+.name-email{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    margin-bottom: 1rem;
+    width: 100%;
+    gap: 1rem;
+}
+
+#contact-form label{
+    color: var(--color1);
+    margin-bottom: 5px;
+}
+
+@keyframes rotateme{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* contact css ends */
+
+
+
+/* Media Queries Begins */
+
+/* for large devices Desktop above 768px */
+
+@media (min-width:768px){
+
+    .navbar-toggle i{
+        display: none;
+    }
+
+    .portfolio-navbar{
+        display: block;
+    }
+
+    .portfolio-navbar ul li {
+        display: inline-block;
+        padding: 0 10px;
+
+    }
+
+    .portfolio-navbar ul li a{
+        line-height: 65px;
+        color: var(--color1);
+
+    }
+
+    header{
+        padding: 0 15px;
+        position: absolute;
+        background-color: transparent;
+    }
+    
+    h1{
+        font-size: 4rem;
+
+    }
+
+    h2{
+        text-align: unset;
+        font-size: 3.5rem;
+        font-weight: 600;
+        color: var(--color1);
+    }
+
+
+
+    /* responsive services begins */
+
+    .service-row{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* responsive services ends */
+
+
+
+    /* responsive resume begins */
+
+    .resume-body{
+        width: 50%;
+        min-height: 400px;
+        margin-top: 0;
+    }
+
+    .resume-body h2{
+        display: none;
+    }
+
+    .resume-heading{
+        padding: 20px 0;
+    }
+
+    .bar-content{
+        margin-bottom: 0;
+    }
+
+    .qualification-content::before{
+        left: 0;
+    }
+
+    .qualification-content::after{
+        left: -2px;
+    }
+
+    .btn{
+        margin-top: 0;
+        margin-bottom: 10px;
+        padding: 0 25px;
+    }
+
+    .resume-intro{
+        padding-right: 6.25rem;
+        width: 50%;
+    }
+
+    /* responsive resume ends */
+
+
+
+    /* responsive contact begins */
+
+    .contact-general{
+        grid-template-columns: repeat(3, 1fr);
+        margin: 4rem 0;
+
+    }
+
+    .contact-card:nth-of-type(2){
+        border-left: 1px solid #d9d9d9;
+        border-right: 1px solid #d9d9d9;
+    }
+
+    .contact-general h2{
+        display: none;
+    }
+
+    /* responsive contact ends */
+
+
+
+    /* responsive about section begins */
+
+    #about{
+        padding: 175px 0 150px 0;
+    }
+
+    .about-intro{
+        width: 60%;
+        margin: 0;
+        order: 1;
+        text-align: unset;
+    }
+
+    .about-image{
+        width: 40%;
+        order: 2;
+    }
+
+    /* responsive about section ends */
+}
+
+/* Media Queries Ends */
+
+
+
